@@ -1,0 +1,1 @@
+I started this project because I wanted to have a very simple password manager. There are already couple of apps on the play store. I main objective is to keep UI simple and clean with less number of pages.
