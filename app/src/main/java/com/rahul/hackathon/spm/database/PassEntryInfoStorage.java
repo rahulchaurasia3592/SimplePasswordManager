@@ -40,6 +40,7 @@ public class PassEntryInfoStorage {
         return isAdded;
     }
 
+
     /**
      * Returns all the entries that are saved on the shared preferences by
      * the user.

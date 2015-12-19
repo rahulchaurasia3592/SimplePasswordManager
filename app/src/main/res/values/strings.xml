@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Simple Password Manager</string>
+    <string name="reward">Earn Reward</string>
+    <string name="show_portal">Show Portal</string>
     <string name="activity_title_register">Register</string>
     
     <!-- Strings related to login -->
