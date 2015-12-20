@@ -116,7 +116,7 @@ public class RegistrationActivity extends AppCompatActivity{
     }
 
     private boolean isEmailValid(String email) {
-        return email.contains("@");
+        return true;
     }
 
     private boolean isPasswordValid(String password) {
