@@ -2,10 +2,11 @@
     <string name="app_name">Simple Password Manager</string>
     <string name="reward">Earn Reward</string>
     <string name="show_portal">Show Portal</string>
+    <string name="action_logout">Logout</string>
     <string name="activity_title_register">Register</string>
     
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email">Username or Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
     <string name="action_register">Register</string>

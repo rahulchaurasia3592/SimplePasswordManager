@@ -98,6 +98,9 @@ public class DashboardActivity extends AppCompatActivity {
         if (id == R.id.action_show_portal) {
             PerkManager.showPortal(this, key);
             return true;
+        }  if (id == R.id.action_logout) {
+            PerkManager.showPortal(this, key);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -128,13 +131,13 @@ public class DashboardActivity extends AppCompatActivity {
                                 new PassEntryInfoStorage(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
                         passEntryInfoStorage.addPassEntry(entry);
                         Snackbar.make(findViewById(R.id.pagecontainer), "Added Successfully", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                                .setAction("Action", null).show();
                         mAdapter.addEntry(entry);
                         doNeedToShowEmptyView();
 
                         // Handle the reward count
                         int itemCount = mAdapter.getItemCount();
-                        if ( !(itemCount % REWARD < 0) && !(itemCount % REWARD > 0)) {
+                        if (!(itemCount % REWARD < 0) && !(itemCount % REWARD > 0)) {
                             PerkManager.trackEvent(DashboardActivity.this, key, earnEvent, true, null);
                         }
                     }
