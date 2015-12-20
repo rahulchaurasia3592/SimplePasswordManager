@@ -1,11 +1,16 @@
 package com.rahul.hackathon.spm;
 
+import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rahul.hackathon.spm.model.Entry;
 
@@ -17,9 +22,11 @@ import java.util.List;
 public class PassEntryAdapter extends RecyclerView.Adapter<PassEntryAdapter.EntryViewHolder> {
 
     private List<Entry> items;
+    private Activity activity;
 
-    public PassEntryAdapter(List<Entry> items) {
+    public PassEntryAdapter(List<Entry> items, Activity activity) {
         this.items = items;
+        this.activity = activity;
     }
 
     @Override
@@ -74,6 +81,16 @@ public class PassEntryAdapter extends RecyclerView.Adapter<PassEntryAdapter.Entr
                 @Override
                 public void onClick(View v) {
                     tvPassword.setText(entry.getPassword());
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ClipboardManager clipboard = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("some label", tvPassword.getText());
+                    Toast.makeText(activity, "Password copied to clipboard", Toast.LENGTH_SHORT).show();
+                    clipboard.setPrimaryClip(clip);
                 }
             });
         }

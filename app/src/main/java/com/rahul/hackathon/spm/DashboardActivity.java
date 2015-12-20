@@ -68,7 +68,7 @@ public class DashboardActivity extends AppCompatActivity {
         emptyView = (TextView) findViewById(R.id.emptyview);
         PassEntryInfoStorage passEntryInfoStorage = new PassEntryInfoStorage(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
         List<Entry> entries = passEntryInfoStorage.getAllPassEntries();
-        mAdapter = new PassEntryAdapter(entries);
+        mAdapter = new PassEntryAdapter(entries, this);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
